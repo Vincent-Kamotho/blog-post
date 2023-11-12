@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Author extends Model
 {
     use HasFactory;
+    protected $fillable = ['name' , 'email' , 'phone_number'];
+
+
+    public function post()
+    {
+        return $this->hasOne(Post::class);
+    }
 }
+
